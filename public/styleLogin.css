@@ -1,0 +1,363 @@
+/* ======================================================
+   Bell'Italia — Login / Registrazione
+   Versione dark elegante con sfondo del Colosseo
+   ====================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap');
+
+/* -------------------- Variabili -------------------- */
+:root {
+  --overlay: rgba(0, 0, 0, 0.65);
+  --ink: #f9fafb;
+  --muted: #cbd5e1;
+  --accent: #3b82f6;
+  /* blu tenue */
+  --accent-hover: #60a5fa;
+  --card: rgba(255, 255, 255, 0.10);
+  --shadow: 0 10px 28px rgba(0, 0, 0, 0.5);
+
+  --radius-lg: 18px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+  --transition: 200ms cubic-bezier(.2, .9, .3, 1);
+}
+
+/* -------------------- Reset -------------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: var(--ink);
+
+  /* === SFONDO COLOSSEO === */
+  background-image:
+    linear-gradient(var(--overlay), var(--overlay)),
+    url("/Immagini/Roma.jpg");
+  /* ^ Immagine reale del Colosseo */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.45;
+}
+
+/* ----------- Pulsante home -------- */
+/* -------- Pulsante home in stile glass/dark -------- */
+.tornaHome {
+  position: fixed;
+  top: 160px;
+  left: 100px;
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* look coerente con la card */
+  background: var(--card); /* rgba(255,255,255,0.10) */
+  color: var(--ink);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  backdrop-filter: blur(12px) saturate(1.4);
+  box-shadow: var(--shadow);
+
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform var(--transition),
+              box-shadow var(--transition),
+              background-color var(--transition),
+              border-color var(--transition);
+}
+
+.tornaHome:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.55), 0 0 0 2px rgba(59, 130, 246, 0.15);
+}
+
+.tornaHome:active {
+  transform: translateY(0);
+}
+
+.tornaHome:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent), 0 10px 28px rgba(0,0,0,0.5);
+}
+
+.tornaHome svg {
+  width: 34px;
+  height: 34px;
+  opacity: 0.95;
+}
+
+/* Versione responsive: più piccola su schermi stretti */
+@media (max-width: 420px) {
+  .tornaHome {
+    top: 20px;
+    left: 20px;
+    width: 64px;
+    height: 64px;
+  }
+  .tornaHome svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+
+
+/* -------------------- Hero -------------------- */
+header.hero {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 2rem 1.25rem;
+  position: relative;
+}
+
+/* -------------------- Alert Message -------------------- */
+#alert-message {
+  position: fixed;
+  top: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.85);
+  color: #111;
+  border-radius: 10px;
+  padding: .65rem 1rem;
+  font-weight: 600;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, .4);
+  z-index: 50;
+  display: none;
+}
+
+#alert-message.show {
+  display: block;
+}
+
+/* -------------------- Card Auth -------------------- */
+.auth-card {
+  width: 100%;
+  max-width: 440px;
+  background: rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(12px) saturate(1.4);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 1rem;
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+.auth-inner {
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: calc(var(--radius-lg) - 4px);
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* -------------------- Header testo -------------------- */
+.auth-header h2 {
+  margin: 0 0 .25rem 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.8rem;
+  color: #fff;
+  text-align: center;
+}
+
+.auth-header small {
+  color: var(--muted);
+  display: block;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* -------------------- Tabs -------------------- */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: .5rem;
+  margin-bottom: 1rem;
+}
+
+.tab {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: var(--muted);
+  padding: .5rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.tab:hover {
+  color: #fff;
+  border-color: #fff;
+}
+
+.tab.active,
+.tab[aria-selected="true"] {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+  border-color: transparent;
+}
+
+/* -------------------- Form -------------------- */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: .85rem;
+  margin-top: .25rem;
+}
+
+label {
+  display: block;
+  font-size: .95rem;
+  color: #fff;
+}
+
+label input[type="email"],
+label input[type="password"],
+label input[type="text"] {
+  display: block;
+  width: 100%;
+  margin-top: .35rem;
+  padding: .75rem .9rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: .98rem;
+  transition: box-shadow var(--transition), border-color var(--transition), background var(--transition);
+}
+
+label input:focus {
+  box-shadow: 0 0 0 2px var(--accent);
+  border-color: var(--accent);
+  outline: none;
+}
+
+/* gruppo radio (ruolo) */
+.role-group {
+  border: 1px dashed rgba(255, 255, 255, 0.25);
+  padding: .7rem .75rem;
+  border-radius: 10px;
+  display: flex;
+  gap: .9rem 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.role-group legend {
+  font-size: .9rem;
+  color: var(--muted);
+  margin-bottom: .3rem;
+}
+
+.role-group label {
+  color: #fff;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+}
+
+.role-group input[type="radio"] {
+  transform: translateY(1px);
+}
+
+/* -------------------- Bottoni -------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: .9rem 1.1rem;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px solid transparent;
+  user-select: none;
+  line-height: 1;
+  font-size: .98rem;
+  transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.25);
+}
+
+.btn.primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+.btn.full {
+  width: 100%;
+}
+
+/* -------------------- Utility -------------------- */
+.hidden {
+  display: none !important;
+}
+
+/* -------------------- Responsività -------------------- */
+@media (max-width: 420px) {
+  header.hero {
+    padding: 1.25rem;
+  }
+
+  .auth-card {
+    padding: .75rem;
+  }
+
+  .auth-inner {
+    padding: 1rem;
+  }
+
+  .auth-header h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* -------------------- Accessibilità -------------------- */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+}

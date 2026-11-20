@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monumenti, Eventi e Ristoranti</title>
+  <link rel="stylesheet" href="tabella.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+  <header>
+    <nav class="nav">
+      <ul class="nav-links">
+        <li><a href="/login.html" class="loginBtn">Login</a></li>
+        <li><a href="" class="logoutBtn">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <a href="/index.html" class="tornaHome">
+    <i class="fa-solid fa-arrow-left"></i>
+  </a>
+
+  <section>
+    <button class="aggiungiBtn hidden">Aggiungi</button>
+    <button class="eliminaBtn hidden" data-tipo="monumenti">Elimina</button>
+    <div class="containerMonumentiBtns hidden">
+      <button class="confermaElimina">Conferma</button>
+      <button class="annullaElimina">Annulla</button>
+    </div>
+
+    <h2>🏛️ Monumenti</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Epoca</th>
+          <th>Descrizione</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody class="tabellaMonumenti">
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <button class="aggiungiBtn hidden">Aggiungi</button>
+    <button class="eliminaBtn hidden" data-tipo="eventi">Elimina</button>
+    <div class="containerEventiBtns hidden">
+      <button class="confermaElimina">Conferma</button>
+      <button class="annullaElimina">Annulla</button>
+    </div>
+    <h2>🎉 Eventi</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Data</th>
+          <th>Luogo</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody class="tabellaEventi">
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <button class="aggiungiBtn hidden">Aggiungi</button>
+    <button class="eliminaBtn hidden" data-tipo="ristoranti">Elimina</button>
+    <div class="containerRistorantiBtns hidden">
+      <button class="confermaElimina">Conferma</button>
+      <button class="annullaElimina">Annulla</button>
+    </div>
+    <h2>🍽️ Ristoranti</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Valutazione</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody class="tabellaRistoranti">
+      </tbody>
+    </table>
+  </section>
+
+  <footer>
+    <p>© 2025 Guida alla città italiana</p>
+  </footer>
+  <script type="module" src="Deposito.js"></script>
+</body>
+
+</html>

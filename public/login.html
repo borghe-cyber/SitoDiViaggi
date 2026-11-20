@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="it">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bell'Italia — Login / Registrazione</title>
+  <link rel="stylesheet" href="styleLogin.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+  <header class="hero">
+    <div>
+      <a href="/index.html" class="tornaHome">
+        <i class="fa-solid fa-arrow-left"></i>
+      </a>
+      <div id="alert-message"></div>
+      <aside class="auth-card">
+        <div class="auth-inner">
+          <div class="auth-header">
+            <h2>Accedi o Registrati</h2>
+            <small>È veloce e sicuro</small>
+          </div>
+
+          <div class="tabs" role="tablist" aria-label="Auth tabs">
+            <button id="tab-login" class="tab active" aria-selected="true">Login</button>
+            <button id="tab-register" class="tab">Registrati</button>
+          </div>
+          <!-- Login form -->
+          <form id="form-login" class="form" novalidate>
+            <label>Email
+              <input type="email" name="email" required placeholder="tuo@esempio.com">
+            </label>
+            <label>Password
+              <input type="password" name="password" required minlength="6" placeholder="••••••">
+            </label>
+            <button type="submit" class="btn primary full">Accedi</button>
+          </form>
+
+          <!-- Register form -->
+          <form id="form-register" class="form hidden" novalidate>
+            <label>Email
+              <input type="email" name="email" required placeholder="tuo@esempio.com">
+            </label>
+            <label>Password
+              <input type="password" name="password" required minlength="6" placeholder="Almeno 6 caratteri">
+            </label>
+            <label>Conferma Password
+              <input type="password" name="confirm_password" required minlength="6" placeholder="Ripeti la password">
+            </label>
+
+            <fieldset class="role-group">
+              <legend>Sei un</legend>
+              <label><input type="radio" name="role" value="user" required> Utente</label>
+              <label><input type="radio" name="role" value="admin"> Admin</label>
+            </fieldset>
+
+            <button type="submit" class="btn primary full">Registrati</button>
+          </form>
+
+
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <script type="module" src="app.js"></script>
+</body>
+
+</html>

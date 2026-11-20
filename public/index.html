@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="it">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bell'Italia Viaggi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="styleHome.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Lora:wght@400;600&family=Montserrat:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+  <header class="hero">
+    <div class="hero-inner container">
+      <nav class="nav">
+        <div class="brand">Bell'Italia <span class="accent">Viaggi</span></div>
+        <ul class="nav-links">
+          <li><a href="#destinazioni">Destinazioni</a></li>
+          <li><a href="#perche">Scegliere noi</a></li>
+          <li><a href="#testimonianze">Recensioni</a></li>
+          <li><a href="/login.html" class="loginBtn">Login</a></li>
+          <li><a href="" class="logoutBtn">Logout</a></li>
+        </ul>
+      </nav>
+      <div id="alert-message"></div>
+      <div class="hero-content">
+        <h1>Scopri le
+          meraviglie d'Italia</h1>
+        <p class="lead">Viaggi indimenticabili attraverso le città più belle della penisola</p>
+        <div class="hero-ctas">
+          <a class="btn-secondary" href="#">Scopri le offerte</a>
+          <a class="btn-secondary" href="#">Tour personalizzati</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Inizio barra ricerca -->
+  <form class="searchForm">
+    <div class="group">
+      <svg viewBox="0 0 24 24" aria-hidden="true" class="search-icon">
+        <g>
+          <path
+            d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z">
+          </path>
+        </g>
+      </svg>
+      <input class="barraRicerca" type="search" placeholder="Search..." name="searchbar" />
+    </div>
+  </form>
+  <!-- Fine barra ricerca -->
+
+  <main>
+    <section id="destinazioni" class="section container">
+      <h2 class="section-title">Le nostre destinazioni</h2>
+      <p class="section-sub">Esplora le città italiane più affascinanti con i nostri tour esclusivi</p>
+
+      <div class="cards-grid">
+        <!-- Card template -->
+        <article class="card">
+          <img src="/Immagini/Napoli.jpg" alt="Napoli">
+          <div class="card-body">
+            <h3>Napoli</h3>
+            <p class="card-text">Vivace città del sud con paesaggi mozzafiato e pizza napoletana</p>
+            <a class="details" href="/tabella.html?luogo=Napoli">Dettagli</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="/Immagini/Milano.jpg" alt="Milano">
+          <div class="card-body">
+            <h3>Milano</h3>
+            <p class="card-text">Capitale della moda e centro cosmopolita per eventi e design</p>
+            <a class="details" href="/tabella.html?luogo=Milano">Dettagli</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="/Immagini/Verona.jpg" alt="Verona">
+          <div class="card-body">
+            <h3>Verona</h3>
+            <p class="card-text">La città di Romeo e Giulietta, storia ed eleganza senza tempo</p>
+            <a class="details" href="/tabella.html?luogo=Verona">Dettagli</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="/Immagini/Roma.jpg" alt="Roma">
+          <div class="card-body">
+            <h3>Roma</h3>
+            <p class="card-text">La città eterna: arte, storia e cucina incredibile</p>
+            <a class="details" href="/tabella.html?luogo=Roma">Dettagli</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="/Immagini/Venezia.jpg" alt="Venezia">
+          <div class="card-body">
+            <h3>Venezia</h3>
+            <p class="card-text">La città sull'acqua, romantica e senza tempo</p>
+            <a class="details" href="/tabella.html?luogo=Venezia">Dettagli</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="/Immagini/Bologna.jpg" alt="Bologna">
+          <div class="card-body">
+            <h3>Bologna</h3>
+            <p class="card-text">La città delle torri e della cucina emiliana ovvero i toretellini </p>
+            <a class="details" href="/tabella.html?luogo=Bologna">Dettagli</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="/Immagini/Torino.jpeg" alt="Torino">
+          <div class="card-body">
+            <h3>Torino</h3>
+            <p class="card-text">Elegante città piemontese con musei e cioccolato</p>
+            <a class="details" href="/tabella.html?luogo=Torino">Dettagli</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="/Immagini/Siena.jpg" alt="Siena">
+          <div class="card-body">
+            <h3>Siena</h3>
+            <p class="card-text">Gioiello medievale toscano con il famoso Palio</p>
+            <a class="details" href="/tabella.html?luogo=Siena">Dettagli</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="/Immagini/Firenze.jpg" alt="Firenze">
+          <div class="card-body">
+            <h3>Firenze</h3>
+            <p class="card-text">Culla del Rinascimento e patrimonio dell'umanità</p>
+            <a class="details" href="/tabella.html?luogo=Firenze">Dettagli</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="perche" class="section alt-bg">
+      <div class="container why-grid">
+        <h2 class="section-title center">Perché scegliere Bell'Italia</h2>
+        <p class="section-sub center">Eccellenza nel servizio e esperienze autentiche</p>
+
+        <div class="features">
+          <div class="feature">
+            <i class="fa-solid fa-map-pin fa-2x"></i>
+            <h4>Guide Locali Esperte</h4>
+            <p>Le nostre guide native ti mostreranno i luoghi più autentici.</p>
+          </div>
+
+          <div class="feature">
+            <i class="fa-solid fa-heart fa-2x"></i>
+            <h4>Esperienze Personalizzate</h4>
+            <p>Itinerari su misura secondo le tue passioni e interessi.</p>
+          </div>
+
+          <div class="feature">
+            <i class="fa-solid fa-hand-holding-dollar fa-2x"></i>
+            <h4>Miglior Rapporto Qualità / Prezzo</h4>
+            <p>Offriamo il massimo valore con prezzi competitivi.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonianze" class="section container">
+      <h2 class="section-title center">Cosa dicono i nostri clienti</h2>
+      <p class="section-sub center">Recensioni reali da viaggiatori soddisfatti</p>
+
+      <div class="testimonials">
+        <blockquote class="testimonial">"Un'esperienza indimenticabile: guida competente e itinerario perfetto." <cite>-
+            Claudia</cite></blockquote>
+        <blockquote class="testimonial">"Cibo, storia e panorami: tutto curato nei minimi dettagli." <cite>-
+            Marco</cite></blockquote>
+        <blockquote class="testimonial">"Possa la nostra vita non cambiare mai e soprattuto che non cambi noi." <cite>-
+            Ezio Auditore</cite></blockquote>
+      </div>
+    </section>
+
+    <a class="wishBtn hidden" href="/tabella.html?luogo=Wishlist" role="button"
+      aria-label="Apri wishlist">
+      <i class="fa-solid fa-clipboard-list"></i>
+    </a>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&copy; 2025 Bell'Italia Viaggi — Tutti i diritti riservati</p>
+      <div class="socials"></div>
+    </div>
+  </footer>
+
+  <script type="module" src="home.js"></script>
+</body>
+
+</html>

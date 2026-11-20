@@ -18,8 +18,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
+// la chiave delle sessioni arriva dal file .env (non versionato)
+if (!process.env.SESSION_SECRET) {
+  console.error("SESSION_SECRET mancante: copia .env.example in .env e imposta una chiave.");
+  process.exit(1);
+}
+
 app.use(session({
-  secret: "yamaha",
+  secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: false,
   cookie: { secure: false }

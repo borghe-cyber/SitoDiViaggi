@@ -1,73 +1,75 @@
 # Bell'Italia Viaggi
 
-Web app di viaggi per scoprire le città italiane: per ogni destinazione mostra monumenti, eventi e ristoranti, con ricerca e valutazioni. Gli utenti possono registrarsi e fare login; l'amministratore può aggiungere o eliminare attrazioni.
+🇬🇧 **English** | 🇮🇹 [Italiano](README.it.md)
 
-## Tecnologie
+A travel web app for discovering Italian cities: for each destination it shows monuments, events and restaurants, with search and ratings. Users can sign up and log in; the administrator can add or remove attractions.
+
+## Tech stack
 
 - **Backend:** Node.js, Express 5
-- **Database:** SQLite (`Deposito.db` per le attrazioni, `Utenti.db` per gli utenti)
-- **Autenticazione:** Passport (strategia locale), bcrypt, express-session
-- **Frontend:** HTML, CSS e JavaScript
+- **Database:** SQLite (`Deposito.db` for attractions, `Utenti.db` for users)
+- **Authentication:** Passport (local strategy), bcrypt, express-session
+- **Frontend:** HTML, CSS and JavaScript
 
-## Requisiti
+## Requirements
 
-- [Node.js](https://nodejs.org/) 22.9 o superiore
+- [Node.js](https://nodejs.org/) 22.9 or later
 
-## Avvio
+## Getting started
 
-1. Clona la repository ed entra nella cartella:
+1. Clone the repository and enter the folder:
 
    ```bash
    git clone https://github.com/borghe-cyber/SitoDiViaggi.git
    cd SitoDiViaggi
    ```
 
-2. Installa le dipendenze:
+2. Install the dependencies:
 
    ```bash
    npm install
    ```
 
-3. Crea il file `.env` partendo dal modello e imposta una chiave segreta per le sessioni:
+3. Create the `.env` file from the template and set a secret key for sessions:
 
    ```bash
    cp .env.example .env
    ```
 
-   Per generare una chiave casuale puoi usare:
+   To generate a random key you can use:
 
    ```bash
    openssl rand -hex 32
    ```
 
-4. Avvia il server:
+4. Start the server:
 
    ```bash
    npm start
    ```
 
-5. Apri il browser su **http://localhost:3000**
+5. Open your browser at **http://localhost:3000**
 
-## Struttura del progetto
+## Project structure
 
 ```
-server.js          Server Express e rotte API
-UserDAO.js         Accesso ai dati degli utenti
-DepositoDAO.js     Accesso ai dati delle attrazioni
-UserDB.js          Connessione a Utenti.db
-DepositoDB.js      Connessione a Deposito.db
-public/            Pagine del sito (home, login, tabella attrazioni), stili, script e immagini
+server.js          Express server and API routes
+UserDAO.js         User data access
+DepositoDAO.js     Attraction data access
+UserDB.js          Connection to Utenti.db
+DepositoDB.js      Connection to Deposito.db
+public/            Site pages (home, login, attractions table), styles, scripts and images
 ```
 
-## API principali
+## Main API routes
 
-| Metodo | Rotta                   | Descrizione                         |
-|--------|-------------------------|-------------------------------------|
-| POST   | `/registrazione`        | Registra un nuovo utente            |
-| POST   | `/login`                | Login                               |
-| GET    | `/logout`               | Logout                              |
-| GET    | `/me`                   | Dati dell'utente loggato            |
-| GET    | `/api/attrazioni`       | Attrazioni di una città             |
-| POST   | `/ricerca`              | Ricerca tra le attrazioni           |
-| POST   | `/inserisci/attrazione` | Aggiunge un'attrazione (solo admin) |
-| POST   | `/elimina`              | Elimina attrazioni (solo admin)     |
+| Method | Route                   | Description                          |
+|--------|-------------------------|--------------------------------------|
+| POST   | `/registrazione`        | Register a new user                  |
+| POST   | `/login`                | Log in                               |
+| GET    | `/logout`               | Log out                              |
+| GET    | `/me`                   | Current user's data                  |
+| GET    | `/api/attrazioni`       | Attractions for a city               |
+| POST   | `/ricerca`              | Search attractions                   |
+| POST   | `/inserisci/attrazione` | Add an attraction (admin only)       |
+| POST   | `/elimina`              | Delete attractions (admin only)      |
